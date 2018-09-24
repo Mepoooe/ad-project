@@ -26,6 +26,7 @@
         <v-toolbar app dark color="primary" >
             <v-toolbar-side-icon
                     @click="drawer = !drawer"
+                    class="hidden-md-and-up"
             ></v-toolbar-side-icon>
             <v-toolbar-title>Ad-application</v-toolbar-title>
             <v-spacer></v-spacer>
@@ -33,6 +34,7 @@
                 <v-btn
                         v-for="link of links"
                         :key="link.title"
+                        :to="link.url"
                         flat
                 >
                     <v-icon left>{{link.icon}}</v-icon>
@@ -58,7 +60,27 @@ export default {
             title: 'login',
             icon: 'lock',
             url: '/login'
-          }
+          },
+          {
+            title: 'Registration',
+            icon: 'face',
+            url: '/registration'
+          },
+          {
+            title: 'Orders',
+            icon: 'bookmark_border',
+            url: '/orders'
+          },
+          {
+            title: 'New Ad',
+            icon: 'note_add',
+            url: '/new'
+          },
+          {
+            title: 'My Ad',
+            icon: 'list',
+            url: '/list'
+          },
         ],
     }
   }
